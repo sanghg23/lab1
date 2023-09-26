@@ -29,9 +29,11 @@ const FlatListBasics = () => {
         extraData={listNV}
         renderItem={({ item }) =>
           < TouchableOpacity onPress={() => {
-            alert(item.name + '--' + item.phone)
+            alert(`${item.name} - ${item.sdt}`);
           }}>
-            <View style={{ flexDirection: 'row', backgroundColor: 'yellow' }}><Text style={styles.item}>{item.name}</Text>
+
+            <View style={{ flexDirection: 'row', backgroundColor: 'yellow' }}>
+              <Text style={styles.item}>{item.name}</Text>
               <Text style={styles.item}>{item.phone}</Text>
             </View>
           </TouchableOpacity>
@@ -96,9 +98,13 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   item: {
-    padding: 10,
-    fontSize: 18,
-    height: 44,
+    width: 200,
+    height: 40,
+    borderColor: "gray",
+    borderWidth: 1,
+    marginBottom: 10,
+    borderRadius: 10,
+    paddingLeft: 2,
 
   },
   text: {
